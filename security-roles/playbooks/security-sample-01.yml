@@ -10,12 +10,12 @@
         regexp: '^Protocol'
         line: 'Protocol 2'
 
-    - name: Configure Password Policy
-      pam_pwquality:
-        name: password requisite pam_pwquality.so
-        minlen: 12
-        maxrepeat: 2
-        minclass: 4
+        #    - name: Configure Password Policy
+        #pam_pwquality:
+        #name: password requisite pam_pwquality.so
+        #minlen: 12
+        #maxrepeat: 2
+        #minclass: 4 
 
     - name: Enable and Start Firewall
       service:
