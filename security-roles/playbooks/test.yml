@@ -5,4 +5,5 @@
     - security-roles
 
   tasks:
-    ping:
+    - name: ping modules
+      ping:
