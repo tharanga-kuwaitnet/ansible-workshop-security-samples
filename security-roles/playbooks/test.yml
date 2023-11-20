@@ -1,9 +1,4 @@
 ---
-- hosts: localhost
-  remote_user: root
-  roles:
-    - security-roles
-
-  tasks:
+- tasks:
     - name: ping modules
       ping:
