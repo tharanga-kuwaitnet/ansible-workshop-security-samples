@@ -1,0 +1,14 @@
+---
+- name: Gather Details and Create Report
+  hosts: all
+  become: yes  # Run tasks with elevated privileges
+
+  tasks:
+    - name: Gather Facts
+      setup:
+        filter: "*"
+
+    - name: Create Report
+      assemble:
+        src: "/etc/ansible/facts.d"
+        dest: "/tmp/node_report.txt"
