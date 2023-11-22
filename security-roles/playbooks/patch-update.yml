@@ -1,0 +1,21 @@
+---
+- name: RHEL Patch Update Automation
+  hosts: all
+  become: yes  # Run tasks with elevated privileges
+
+  tasks:
+    - name: Update package cache
+      yum:
+        name: '*'
+        state: latest
+      when: ansible_os_family == 'RedHat'
+
+    - name: List available updates
+      command: "yum list updates"
+      when: ansible_os_family == 'RedHat'
+
+    - name: Upgrade all packages
+      yum:
+        name: '*'
+        state: latest
+      when: ansible_os_family == 'RedHat'
