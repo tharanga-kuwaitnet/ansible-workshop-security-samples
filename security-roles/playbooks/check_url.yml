@@ -6,7 +6,7 @@
   tasks:
     - name: Check URL Status
       uri:
-        url: "https://example.com"
+        url: "http://192.168.100.123/"
         method: GET
         status_code: 200
       register: result
