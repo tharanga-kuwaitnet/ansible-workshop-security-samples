@@ -1,0 +1,9 @@
+---
+- name: Restart IIS Server
+  hosts: all
+  gather_facts: false  # Disable gathering facts for Windows hosts
+  become: yes  # Run tasks with elevated privileges
+
+  tasks:
+    - name: Restart IIS
+      win_shell: Restart-Service -Name W3SVC
