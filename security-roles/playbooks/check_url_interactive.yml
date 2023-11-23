@@ -1,0 +1,20 @@
+---
+- name: Check URL Status
+  hosts: localhost  # Assuming the check is performed from the Ansible control machine
+  gather_facts: false  # Disable gathering facts
+
+  vars_prompt:
+    - name: "url_to_check"
+      prompt: "Enter the URL to check (e.g., https://example.com):"
+
+  tasks:
+    - name: Check URL Status
+      uri:
+        url: "{{ url_to_check }}"
+        method: GET
+        status_code: 200
+      register: result
+
+    - name: Print Result
+      debug:
+        var: result.status

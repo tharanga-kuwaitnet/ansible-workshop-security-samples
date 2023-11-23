@@ -1,0 +1,16 @@
+---
+- name: Check URL Status
+  hosts: localhost  # Assuming the check is performed from the Ansible control machine
+  gather_facts: false  # Disable gathering facts
+
+  tasks:
+    - name: Check URL Status
+      uri:
+        url: "https://example.com"
+        method: GET
+        status_code: 200
+      register: result
+
+    - name: Print Result
+      debug:
+        var: result.status
