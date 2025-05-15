@@ -1,9 +1,9 @@
 ---
-- name: Restart IIS Server
+- name: Restart IIS service Main Playbook
   hosts: all
   gather_facts: false  # Disable gathering facts for Windows hosts
   become: yes  # Run tasks with elevated privileges
 
   tasks:
-    - name: Restart IIS
+    - name: Restart IIS service play
       win_shell: Restart-Service -Name W3SVC
