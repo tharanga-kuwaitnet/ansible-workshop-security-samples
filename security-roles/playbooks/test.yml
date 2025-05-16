@@ -1,5 +1,5 @@
 ---
-- name: Ping all hosts in inventory
+- name: Ping all hosts
   hosts: all
   
   tasks:
